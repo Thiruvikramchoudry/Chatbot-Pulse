@@ -1,0 +1,36 @@
+#scroll_button{
+    transition: 0.2s;
+}
+#scroll_button:hover{
+    background-color: #09384d;
+    cursor: pointer;
+}
+
+#options{
+    background-color: #20749a;
+    color: #09384d;
+    transition: 0.2s;
+}
+
+#options:hover{
+    background-color: #09384d;
+    color: #20749a;
+    cursor: pointer;
+}
+
+
+#side_bar{
+    transition: 0.5s;
+    width: 265px;
+    height:100%;
+    background-color: #04222d;
+
+}
+
+#close_side{
+    transition: 0.5s;
+    width: 76px;
+    height:100%;
+    background-color: #04222d;
+}
+
