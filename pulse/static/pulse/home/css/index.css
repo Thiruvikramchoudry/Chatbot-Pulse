@@ -1,0 +1,105 @@
+#button_click{
+    border: 1px solid #00FFCA;
+    background:none;
+    transition: 0.2s;
+    color: #00FFCA;
+}
+
+#button_click:hover{
+    background:#00FFCA;
+    color: #0A4D68;
+}
+
+
+#referal{
+    text-decoration: none;
+}
+#referal:hover{
+    text-decoration: underline;
+}
+
+
+#whole{
+    animation: 3s fade linear;
+    filter: blur(3px);
+}
+
+@keyframes fade {
+    0%{
+        filter: blur(0px)
+    }
+    95%{
+        filter: blur(0px);
+    }
+    100%{
+        filter: blur(3px)
+    }
+}
+
+
+#login_bar{
+    position: fixed;
+    left: 32%;
+    top: 12%;
+    width: 500px;
+    height: 600px;
+    border-radius: 5px;
+    animation: 4s float linear;
+    opacity: 1;
+    background: #0a4d68;
+
+}
+
+@keyframes float {
+    0%{
+        opacity: 0;
+        left : 43%;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        left:32%;
+    }
+}
+
+
+#login_bar_inner{
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    border-radius: 3px;
+}
+
+
+::placeholder {
+  color: #00FFCA;
+  opacity: 1; /* Firefox */
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+#signin{
+    width: 100px;
+    height: 40px;
+    background-color: #088395;
+    margin-top: 10px;
+    color: #00FFCA;
+    border: 1px solid #084259;
+    border-radius: 5px;
+    margin-left: 130px;
+    transition: 0.2s;
+}
+
+#signin:hover{
+    background-color: #00FFCA;
+    color: #088395;
+    cursor: pointer;
+}
+
+a:hover{
+    cursor: pointer;
+}
