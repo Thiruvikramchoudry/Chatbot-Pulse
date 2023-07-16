@@ -34,3 +34,63 @@
     background-color: #04222d;
 }
 
+
+#chat_area_outer{
+    width: 70vw;
+    height: 100%;
+    background: #08678d;
+    padding: 0px 100px;
+}
+
+input:focus{
+    outline: none;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+#submit_message{
+    background-color: #ff5900;
+    color: whitesmoke;
+    transition: 0.2s;
+}
+#submit_message:hover{
+    background-color: whitesmoke;
+    color: #ff5900;
+    cursor: pointer;
+}
+
+#image_input:hover{
+    cursor: pointer;
+}
+
+#preloader-1{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+    background: #08678d;
+    opacity: 0;
+    animation: 1s loader linear;
+
+}
+@keyframes loader {
+    0%{
+        opacity: 1;
+        z-index: 1;
+
+    }
+    90%{
+        opacity: 1;
+        z-index: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: 0;
+    }
+}
