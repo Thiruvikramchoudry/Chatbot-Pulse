@@ -8,6 +8,7 @@
 </head>
 
 <body style="position: relative;right: 8px;bottom: 8px;height: 100vh;overflow: hidden;width: 101%;z-index: 1">
+
     <div id="preloader-1">
         <div style="position: fixed;left: 47%;top: 45%;width: 80px;height: 80px;">
                     <img src="{% static 'pulse/chatarea/images/394.gif' %}" alt="img" style="width: 100%;height: 100%;border-radius: 55px;">
@@ -58,7 +59,9 @@
 
                 </div>
             </div>
+
                 </div>
+            <p id="display_image"  style="text-align: center;color: aliceblue"></p>
 
         </div>
         <div id="chat_area_outer" >
@@ -66,35 +69,35 @@
 
                 <!--first chatbox-->
 
-                <div style="height: 85%;width: 100%;overflow-y: scroll;border-radius: 39px;padding-bottom: 10px;" id="disease">
+                <div style="height: 85%;width: 100%;overflow-y: scroll;border-radius: 39px;padding-bottom: 10px;overflow-x:hidden " id="disease">
                         <div style="width: 50%;min-height: 20px;background: #ff6300;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 10px;font-family: monospace;font-size: 13px;">
                             <div style="width: 70px"><b>PULSE : </b></div>
                             <div style="width: 100%"><span>Hi This is PULSE an interactive chatbot....You can ask me queries based on any ski disease.....</span></div>
 
-                        </div><div style="width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;">
-                            <div style="width: 70px"><b>VIKRAM :</b></div>
-                            <div style="width: 100%"><span>Hello Pulse</span></div>
-
                         </div>
-                    <div style="width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;">
-                            <div  style="width: 70px;"><b>VIKRAM :</b></div>
-                            <div style="width: 100%"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat bibendum semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed aliquet leo id elementum fermentum. Aliquam id urna sit amet neque ultricies venenatis. Proin nec consequat eros. Fusce ultricies ultrices augue, vitae pulvinar mauris mollis ac. Sed quis lacus id mi interdum condimentum. Vestibulum efficitur euismod mauris, sed vulputate mauris pharetra eu. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sit amet ultrices sem, id laoreet lorem. Suspendisse accumsan rutrum quam, a lobortis enim malesuada ac. Sed scelerisque dolor vel dapibus ultrices. Ut lacinia dui et dolor euismod, sed vestibulum sem tempus</span></div>
+                    <!--div style="width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;">
+                            <p style="position: relative;left: 90%;top: -17px;margin: 0px"><b>~VIKRAM</b></p>
+                            <div style="width: 100%;position: relative;top: -10px;">
+                                <img src="{% static 'user_images/ISIC_0024306.jpg' %}" alt="img" style="width: 100px">
+                            </div>
 
-                        </div>
-                    <div style="width: 50%;min-height: 20px;background: #ff6300;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 10px;font-family: monospace;font-size: 13px;">
-                            <div style="width: 70px"><b>PULSE : </b></div>
-                            <div style="width: 100%"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consequat bibendum semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed aliquet leo id elementum fermentum. Aliquam id urna sit amet neque ultricies venenatis. Proin nec consequat eros. Fusce ultricies ultrices augue, vitae pulvinar mauris mollis ac. Sed quis lacus id mi interdum condimentum. Vestibulum efficitur euismod mauris, sed vulputate mauris pharetra eu. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sit amet ultrices sem, id laoreet lorem. Suspendisse accumsan rutrum quam, a lobortis enim malesuada ac. Sed scelerisque dolor vel dapibus ultrices. Ut lacinia dui et dolor euismod, sed vestibulum sem tempus</span></div>
+                        </div-->
+                    <div style="width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end">
+                        <div style="width: 350px;background: #09384d;border-radius: 20px;">
+                            <div style="text-align: end;height: 20px;padding: 4px 16px;">
+                                ~VIKRAM
+                            </div>
+                            <div style="width: 100%;">
+                                <img src="{% static 'user_images/ISIC_0024306.jpg' %}" alt="img" style="width: 100%;border-radius: 3px 3px 18px 18px;">
 
+                            </div>
                         </div>
-                    <div style="width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;">
-                            <div  style="width: 70px;"><b>VIKRAM :</b></div>
-                            <div style="width: 100%"><span>Sed aliquet leo id elementum fermentum. Aliquam id urna sit amet neque ultricies venenatis. Proin nec consequat eros. Fusce ultricies ultrices augue, vitae pulvinar mauris mollis ac. Sed quis lacus id mi interdum condimentum. Vestibulum efficitur euismod mauris, sed vulputate mauris pharetra eu. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sit amet ultrices sem, id laoreet lorem. Suspendisse accumsan rutrum quam, a lobortis enim malesuada ac. Sed scelerisque dolor vel dapibus ultrices. Ut lacinia dui et dolor euismod, sed vestibulum sem tempus</span></div>
 
-                        </div>
+                    </div>
                 </div>
 
                 <!--second chatbox-->
-                <div style="height: 85%;width: 100%;overflow-y: scroll;display: none" id="cancer">
+                <div style="height: 85%;width: 100%;overflow-y: scroll;display: none;overflow-x:hidden" id="cancer">
                         <div style="width: 50%;min-height: 20px;background: #ff6300;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 10px;font-family: monospace;font-size: 13px;">
                             <div style="width: 70px"><b>PULSE : </b></div>
                             <div><span>Hi This is PULSE an interactive chatbot....You can ask me queries based on any skin cancer.....</span></div>
@@ -107,7 +110,7 @@
                 </div>
 
                 <!--third chatbox-->
-                <div style="height: 85%;width: 100%;overflow-y: scroll;display: none" id="chatbox">
+                <div style="height: 85%;width: 100%;overflow-y: scroll;display: none;overflow-x:hidden" id="chatbox">
                         <div style="width: 50%;min-height: 20px;background: #ff6300;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 10px;font-family: monospace;font-size: 13px;">
                             <div style="width: 70px"><b>PULSE : </b></div>
                             <div><span>Hi This is PULSE an interactive chatbot.... Do u want me to connect with an expert:</span></div>
@@ -118,9 +121,12 @@
 
                         </div>
                 </div>
-
+                <form action="{% url 'send_message' %}" method="post" id="form_submition">
+                    {% csrf_token %}
                 <div style="height: 5%;width: 94%;padding: 32px;display: flex;box-shadow: 2px 2px 98px 10px black;border-radius: 72px;">
+
                     <div style="width: 15%;height: 40px;display: flex;justify-content: space-around" >
+
                         <div style="width: 35px;height: 15px;padding: 7px 16px 28px 12px;margin-right: 5px;border-radius: 10px;overflow: hidden" id="submit_message" >
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16" style="position: relative;left:4px;top: 3px;">
   <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
@@ -139,27 +145,32 @@
                     </div>
                     <div style="width: 85%;height: 30px;display: flex" id="changable_division">
                         <div style="width: 90%">
-                            <input type="text" style="width: 100%;height: 40px;border: none;border-radius: 10px 0px 0px 10px;padding: 5px;font-size: 17px">
+                            <input type="text" style="width: 100%;height: 40px;border: none;border-radius: 10px 0px 0px 10px;padding: 5px;font-size: 17px" id="message_text">
                         </div>
-                        <div style="width: 10%;height: 40px;padding: 5px;margin-left: 10px;border-radius: 0px 10px 10px 0px" id="submit_message" onclick="send_data()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16" style="position: relative;left: 27px;top: 6px;">
+
+                        <button style="width: 10%;height: 51px;padding: 5px;margin-left: 10px;border-radius: 0px 10px 10px 0px;border: none;" id="submit_message" type="submit" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16" style="position: relative;left: 0px;top: 3px;">
   <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362.798-.799.96-1.932.362-2.531-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532Z"/>
   <path d="M15.811 3.312c-.363 1.534-1.334 3.626-3.64 6.218l-.24 2.408a2.56 2.56 0 0 1-.732 1.526L8.817 15.85a.51.51 0 0 1-.867-.434l.27-1.899c.04-.28-.013-.593-.131-.956a9.42 9.42 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.662-2.191-1.277-.614-.615-1.079-1.379-1.275-2.195l-.203-.083a9.556 9.556 0 0 0-.655-.248c-.363-.119-.675-.172-.955-.132l-1.896.27A.51.51 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.55 11.087.582 12.623.208c.89-.217 1.59-.232 2.08-.188.244.023.435.06.57.093.067.017.12.033.16.045.184.06.279.13.351.295l.029.073a3.475 3.475 0 0 1 .157.721c.055.485.051 1.178-.159 2.065Zm-4.828 7.475.04-.04-.107 1.081a1.536 1.536 0 0 1-.44.913l-1.298 1.3.054-.38c.072-.506-.034-.993-.172-1.418a8.548 8.548 0 0 0-.164-.45c.738-.065 1.462-.38 2.087-1.006ZM5.205 5c-.625.626-.94 1.351-1.004 2.09a8.497 8.497 0 0 0-.45-.164c-.424-.138-.91-.244-1.416-.172l-.38.054 1.3-1.3c.245-.246.566-.401.91-.44l1.08-.107-.04.039Zm9.406-3.961c-.38-.034-.967-.027-1.746.163-1.558.38-3.917 1.496-6.937 4.521-.62.62-.799 1.34-.687 2.051.107.676.483 1.362 1.048 1.928.564.565 1.25.941 1.924 1.049.71.112 1.429-.067 2.048-.688 3.079-3.083 4.192-5.444 4.556-6.987.183-.771.18-1.345.138-1.713a2.835 2.835 0 0 0-.045-.283 3.078 3.078 0 0 0-.3-.041Z"/>
   <path d="M7.009 12.139a7.632 7.632 0 0 1-1.804-1.352A7.568 7.568 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"/>
 </svg>
-                        </div>
+                        </button>
 
                     </div>
 
 
                 </div>
+                </form>
 
             </div>
+
 
         </div>
     </div>
 
+
 </body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script>
     let flag=0;
     function close_sidebar(){
@@ -172,6 +183,7 @@
             let chat_area_outer=document.getElementById("chat_area_outer");
             chat_area_outer.style.width="82vw";
             flag=1;
+
         }else{
             let sidebar=document.getElementById("close_side");
 
@@ -182,12 +194,6 @@
             chat_area_outer.style.width="70vw";
             flag=0;
         }
-    }
-</script>
-<script>
-    function send_data(){
-        let image=document.getElementById("image_input");
-        console.log(image.value);
     }
 </script>
 
@@ -204,25 +210,12 @@
     console.log('File Name:', fileName);
     console.log('File Size:', fileSize);
     console.log('File Type:', fileType);
+    document.getElementById("display_image").innerHTML="<b>SELECTED IMAGE: </b>"+fileName+"<span onclick='remove_pic()'> <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash3' viewBox='0 0 16 16' style='color: red;cursor: pointer'> <path d='M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z'/></svg></span>";
   });
-       function send_message(){
-           let message =document.getElementById("text_context").value;
-
-           let current_user=document.getElementById("current_username").innerText;
-           $.ajax({
-            type:'POST',
-            url:'/send_message',
-              data:{
-                  username:current_user,
-                  message:message,
-                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
-              },
-              success: function(data){
-
-              }
-           });
-           document.getElementById("text_context").value="";
-       }
+    function remove_pic(){
+        document.getElementById("display_image").innerHTML="";
+        document.getElementById("image_input").value="";
+    }
 </script>
 
 <script>
@@ -255,14 +248,160 @@
     }
     var objDiv = document.getElementById("disease");
     objDiv.scrollTop = objDiv.scrollHeight;
-    var objDiv = document.getElementById("camcer");
-    objDiv.scrollTop = objDiv.scrollHeight;
-    var objDiv = document.getElementById("chatbox");
-    objDiv.scrollTop = objDiv.scrollHeight;
+    var objDiv2 = document.getElementById("cancer");
+    objDiv2.scrollTop = objDiv2.scrollHeight;
+    var objDiv3 = document.getElementById("chatbox");
+    objDiv3.scrollTop = objDiv3.scrollHeight;
 
 
 
 </script>
+<script>
+    let form_ele=document.getElementById("form_submition");
+    form_ele.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      var formData = new FormData(form_ele);
+
+      // Get the image file from the input field
+      var imageInput = document.getElementById("image_input"); // Replace "imageInput" with the ID of your image input field
+      var imageFile = imageInput.files[0]; // Assuming you only allow a single file selection
+
+
+
+      // Get the message value
+      var message = document.getElementById("message_text").value; // Replace "messageInput" with the ID of your message input field
+
+      // Append the image file and message to the FormData object
+      formData.append("image", imageFile);
+      formData.append("message", message);
+      formData.append("chatbox_type", selected_chat);
+      document.getElementById("message_text").value="";
+      remove_pic();
+
+      // Make the AJAX request using Fetch API
+      fetch("send_message", {
+        method: "POST",
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log("success");
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+    });
+</script>
+
+
+<script>
+    let initial_message_count = 0;
+    $(document).ready(function () {
+        setInterval(function () {
+            $.ajax({
+                type: 'GET',
+                url: "getmessages0",
+                success: function (response) {
+                    let count = 0;
+                    for (var key in response.messages) {
+                        count += 1;
+                    }
+                    console.log(count,initial_message_count)
+                    if (count != initial_message_count) {
+
+                        initial_message_count=count;
+                        $("#disease").empty();
+
+                        for (var key in response.messages) {
+                            let message = response.messages[key][0];
+                            let img_path= response.messages[key][1];
+                            let chat_type=response.messages[key][2];
+                            let temp="";
+                            if(chat_type=="user"){
+                                if(img_path!=null){
+                                    let static_url="{% static '' %}" + img_path;
+                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background: #00a1ff;border-radius: 20px;border-radius: 20px;margin-top: 10px;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    document.getElementById("disease").innerHTML+=temp;
+                                }
+
+                                if(message!=""){
+                                    temp="<div style='width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    document.getElementById("disease").innerHTML+=temp;
+                                }
+
+                            }
+
+                        }
+
+                    }
+                },
+                error: function (response) {
+                    alert('An error occured')
+                }
+            });
+        }, 1000);
+    });
+</script>
+
+
+<script>
+    initial_message_count_1 = 0;
+    $(document).ready(function () {
+        setInterval(function () {
+            $.ajax({
+                type: 'GET',
+                url: "getmessages1",
+                success: function (response) {
+                    count_1 = 0;
+                    for (var key in response.messages) {
+                        count_1 += 1;
+                    }
+                    console.log(count_1,initial_message_count_1)
+                    if (count_1 != initial_message_count_1) {
+
+                        initial_message_count_1=count_1;
+                        $("#cancer").empty();
+
+                        for (var key in response.messages) {
+                            let message = response.messages[key][0];
+                            let img_path= response.messages[key][1];
+                            let chat_type=response.messages[key][2];
+                            let temp="";
+                            if(chat_type=="user"){
+                                if(img_path!=null){
+                                    let static_url="{% static '' %}" + img_path;
+                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background: #00a1ff;border-radius: 20px;border-radius: 20px;margin-top: 10px;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    document.getElementById("cancer").innerHTML+=temp;
+                                }
+                                if(message!=""){
+                                    temp="<div style='width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    document.getElementById("cancer").innerHTML+=temp;
+                                }
+                            }else{
+                                if(message=="Invalid Image"){
+                                    temp="<div style='width: 50%;min-height: 10px;background: lightskyblue;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    document.getElementById("cancer").innerHTML+=temp;
+                                }else if(message=="Valid Image"){
+                                    temp="<div style='width: 50%;min-height: 10px;background: greenyellow;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    document.getElementById("cancer").innerHTML+=temp;
+                                }
+
+                            }
+
+                        }
+
+                    }
+                },
+                error: function (response) {
+                    alert('An error occured')
+                }
+            });
+        }, 1000);
+    });
+</script>
+
+
 
 
 </html>

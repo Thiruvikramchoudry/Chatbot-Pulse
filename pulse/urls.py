@@ -23,6 +23,9 @@ urlpatterns = [
     path('login',views.login,name="login"),
     path('signup',views.signup,name="signup"),
     path('logout',views.logout,name="logout"),
-    path('chatbox',views.chatbox,name="chatbox")
+    path('chatbox',views.chatbox,name="chatbox"),
+    path('send_message',views.send_message,name="send_message"),
+    path('getmessages0',views.getmessages0,name="getmessages0"),
+    path('getmessages1',views.getmessages1,name="getmessages1"),
 
 ]
