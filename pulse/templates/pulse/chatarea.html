@@ -62,7 +62,9 @@
 
                 </div>
             <p id="display_image"  style="text-align: center;color: aliceblue"></p>
-
+            <div style=" width: 90px;height: 80px;margin: auto" class="ready_preloader" id="preloader-2" >
+                <img src="{% static 'pulse/chatarea/images/1484.gif' %}" alt="">
+            </div>
         </div>
         <div id="chat_area_outer" >
             <div style="height: 100%;width: 100%;">
@@ -279,6 +281,7 @@
       document.getElementById("message_text").value="";
       remove_pic();
 
+
       // Make the AJAX request using Fetch API
       fetch("send_message", {
         method: "POST",
@@ -317,6 +320,10 @@
                             let message = response.messages[key][0];
                             let img_path= response.messages[key][1];
                             let chat_type=response.messages[key][2];
+                            console.log(
+
+                            )
+
                             let temp="";
                             if(chat_type=="user"){
                                 if(img_path!=null){
@@ -330,6 +337,18 @@
                                     document.getElementById("disease").innerHTML+=temp;
                                 }
 
+                            }else{
+                                console.log(message);
+                                if(message=="Invalid Image"){
+                                    temp="<div style='width: 50%;min-height: 10px;background: lightskyblue;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    document.getElementById("disease").innerHTML+=temp;
+                                }else if(message=="Valid Image"){
+                                    temp="<div style='width: 50%;min-height: 10px;background: greenyellow;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    document.getElementById("disease").innerHTML+=temp;
+                                }else{
+                                    temp="<div style='width: 50%;min-height: 10px;background: orangered;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    document.getElementById("disease").innerHTML+=temp;
+                                }
                             }
 
                         }
@@ -359,6 +378,7 @@
                     }
                     console.log(count_1,initial_message_count_1)
                     if (count_1 != initial_message_count_1) {
+
 
                         initial_message_count_1=count_1;
                         $("#cancer").empty();
