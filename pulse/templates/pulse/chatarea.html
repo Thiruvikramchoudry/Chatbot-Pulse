@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <title>Chatbox</title>
     <link rel="stylesheet" href="{% static 'pulse/chatarea/styles/index.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'pulse/chatarea/images/Pulse_logo.png' %}">
 </head>
 
-<body style="position: relative;right: 8px;bottom: 8px;height: 100vh;overflow: hidden;width: 101%;z-index: 1">
+<body style="position: relative;right: 8px;bottom: 8px;height: 100vh;overflow: hidden;width: 101%;z-index: 1;background: #08678d">
 
     <div id="preloader-1">
         <div style="position: fixed;left: 47%;top: 45%;width: 80px;height: 80px;">
@@ -26,11 +27,9 @@
                 </div>
             </div>
             <div id="side_bar_inner">
-            <p style="color: #088395;font-size: 20px;margin-left: 5px">Chatbot <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
-  <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-</svg></p>
+                <img src="{% static 'pulse/home/images/Pulse_logo.png' %}" alt="img" style=" width: 100px;margin-left: 29%;border-radius: 51px;margin-bottom: 11px;margin-top: 11px;">
             <div style="width: 92%;min-height: 200px;padding: 10px;position: relative;bottom: 10px;">
-                <div style="height: 34px;width: 92%;border-radius: 5px;margin-bottom: 10px;padding: 10px" id="options" onclick="choose_bot(0)">
+                <div style="height: 34px;width: 92%;border-radius: 5px;margin-bottom: 10px;padding: 10px;background-color: #09384d;color: #20749a;"   onclick="choose_bot(0)" id="side_nav_selector1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16" >
   <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z"/>
   <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"/>
@@ -40,7 +39,7 @@
 
                 </div>
 
-                <div style="height: 34px;width: 92%;border-radius: 5px;margin-bottom: 10px;padding: 10px" id="options" onclick="choose_bot(1)">
+                <div style="height: 34px;width: 92%;border-radius: 5px;margin-bottom: 10px;padding: 10px"  onclick="choose_bot(1)" id="side_nav_selector2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16" >
   <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z"/>
   <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"/>
@@ -49,7 +48,7 @@
 
                 </div>
 
-                <div style="height: 34px;width: 92%;border-radius: 5px;margin-bottom: 10px;padding: 10px" id="options" onclick="choose_bot(2)">
+                <div style="height: 34px;width: 92%;border-radius: 5px;margin-bottom: 10px;padding: 10px" onclick="choose_bot(2)" id="side_nav_selector3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-hospital" viewBox="0 0 16 16" >
   <path d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5Zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9h-.5Zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Z"/>
   <path d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1V1Zm2 14h2v-3H7v3Zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm0-14H6v1h4V1Zm2 7v7h3V8h-3Zm-8 7V8H1v7h3Z"/>
@@ -99,7 +98,7 @@
                 </div>
 
                 <!--second chatbox-->
-                <div style="height: 85%;width: 100%;overflow-y: scroll;display: none;overflow-x:hidden" id="cancer">
+                <div style="height: 85%;width: 100%;overflow-y: scroll;display: none;overflow-x:hidden;padding-bottom: 10px;" id="cancer">
                         <div style="width: 50%;min-height: 20px;background: #ff6300;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 10px;font-family: monospace;font-size: 13px;">
                             <div style="width: 70px"><b>PULSE : </b></div>
                             <div><span>Hi This is PULSE an interactive chatbot....You can ask me queries based on any skin cancer.....</span></div>
@@ -226,6 +225,9 @@
         let div1=document.getElementById("disease");
         let div2=document.getElementById("cancer");
         let div3=document.getElementById("chatbox");
+        let div11=document.getElementById("side_nav_selector1");
+        let div12=document.getElementById("side_nav_selector2");
+        let div13=document.getElementById("side_nav_selector3");
 
         if(selected_chat!=n) {
             if (n == 0) {
@@ -233,16 +235,35 @@
                 div1.style.display="block";
                 div2.style.display="none";
                 div3.style.display="none";
+                div11.style.backgroundColor="#09384d";
+                div12.style.backgroundColor="";
+                div13.style.backgroundColor="";
+                div11.style.color="#20749a";
+                div12.style.color="";
+                div13.style.color="";
+
             } else if (n == 1) {
                 selected_chat = 1;
                 div2.style.display="block";
                 div1.style.display="none";
                 div3.style.display="none";
+                div12.style.backgroundColor="#09384d";
+                div11.style.backgroundColor="";
+                div13.style.backgroundColor="";
+                div12.style.color="#20749a";
+                div11.style.color="";
+                div13.style.color="";
             } else {
                 selected_chat = 2;
                 div3.style.display="block";
                 div2.style.display="none";
                 div1.style.display="none";
+                div13.style.backgroundColor="#09384d";
+                div12.style.backgroundColor="";
+                div11.style.backgroundColor="";
+                div13.style.color="#20749a";
+                div12.style.color="";
+                div11.style.color="";
             }
             console.log(selected_chat);
         }
@@ -330,23 +351,26 @@
                                     let static_url="{% static '' %}" + img_path;
                                     temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background: #00a1ff;border-radius: 20px;border-radius: 20px;margin-top: 10px;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
+                                    {#let height=(document.getElementById("disease").scrollHeight);#}
+                                    {#console.log("eij",height,height+100);#}
+                                    {#document.getElementById("disease").scrollTo(0, height+100);#}
                                 }
 
                                 if(message!=""){
-                                    temp="<div style='width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }
 
                             }else{
                                 console.log(message);
                                 if(message=="Invalid Image"){
-                                    temp="<div style='width: 50%;min-height: 10px;background: lightskyblue;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: lightskyblue;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }else if(message=="Valid Image"){
-                                    temp="<div style='width: 50%;min-height: 10px;background: greenyellow;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: greenyellow;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }else{
-                                    temp="<div style='width: 50%;min-height: 10px;background: orangered;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: orangered;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }
                             }
@@ -395,15 +419,19 @@
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
                                 if(message!=""){
-                                    temp="<div style='width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
                             }else{
                                 if(message=="Invalid Image"){
-                                    temp="<div style='width: 50%;min-height: 10px;background: lightskyblue;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: lightskyblue;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }else if(message=="Valid Image"){
-                                    temp="<div style='width: 50%;min-height: 10px;background: greenyellow;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: greenyellow;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    document.getElementById("cancer").innerHTML+=temp;
+                                }
+                                else{
+                                    temp="<div style='width: 40%;min-height: 10px;background: orangered;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
 

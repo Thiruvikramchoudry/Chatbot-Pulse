@@ -6,13 +6,13 @@
     cursor: pointer;
 }
 
-#options{
+#side_nav_selector1,#side_nav_selector2,#side_nav_selector3{
     background-color: #20749a;
     color: #09384d;
     transition: 0.2s;
 }
 
-#options:hover{
+#side_nav_selector1:hover,#side_nav_selector2:hover,#side_nav_selector3:hover{
     background-color: #09384d;
     color: #20749a;
     cursor: pointer;
@@ -110,4 +110,9 @@ input:focus{
     100%{
         opacity: 1;
     }
+}
+
+
+.select_active{
+    background: #ff5900;
 }
