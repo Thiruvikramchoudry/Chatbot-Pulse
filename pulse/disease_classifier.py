@@ -13,7 +13,7 @@ def predict_disease(image):
     predictions = model.predict(img_array)
     score = tf.nn.softmax(predictions[0])
 
-    class_names =['Acne and Rosacea Photos','Bullous Disease Photos','Eczema Photos','Poison Ivy Photos and other Contact Dermatitis','Normal skin','Psoriasis pictures Lichen Planus and related diseases','Urticaria Hives']
+    class_names =['Acne','Bullous Disease Photos','Eczema Photos','Poison Ivy Photos and other Contact Dermatitis','Normal skin','Psoriasis pictures Lichen Planus and related diseases','Urticaria Hives']
 
     return class_names[np.argmax(score)]
 

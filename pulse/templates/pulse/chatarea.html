@@ -111,15 +111,9 @@
                 </div>
 
                 <!--third chatbox-->
-                <div style="height: 85%;width: 100%;overflow-y: scroll;display: none;overflow-x:hidden" id="chatbox">
-                        <div style="width: 50%;min-height: 20px;background: #ff6300;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 10px;font-family: monospace;font-size: 13px;">
-                            <div style="width: 70px"><b>PULSE : </b></div>
-                            <div><span>Hi This is PULSE an interactive chatbot.... Do u want me to connect with an expert:</span></div>
-
-                        </div><div style="width: 50%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 47%;font-family: monospace;font-size: 13px;">
-                            <div style="width: 70px"><b>VIKRAM :</b></div>
-                            <div><span>Hello Pulse</span></div>
-
+                <div style="height: 85%;width: 100%;overflow-y: scroll;display: none;overflow-x:hidden;padding-bottom: 9px;" id="chatbox">
+                        <div id="search_button" onclick="request_doctor()">
+                            Request a Doctor
                         </div>
                 </div>
                 <form action="{% url 'send_message' %}" method="post" id="form_submition">
@@ -177,7 +171,7 @@
     function close_sidebar(){
         if (flag==0){
             let sidebar=document.getElementById("side_bar");
-            console.log(sidebar.classList)
+
             let side_bar_inner=document.getElementById("side_bar_inner")
             sidebar.id="close_side";
             side_bar_inner.style.display="none";
@@ -207,10 +201,6 @@
     const fileName = selectedFile.name;
     const fileSize = selectedFile.size;
     const fileType = selectedFile.type;
-
-    console.log('File Name:', fileName);
-    console.log('File Size:', fileSize);
-    console.log('File Type:', fileType);
     document.getElementById("display_image").innerHTML="<b>SELECTED IMAGE: </b>"+fileName+"<span onclick='remove_pic()'> <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash3' viewBox='0 0 16 16' style='color: red;cursor: pointer'> <path d='M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z'/></svg></span>";
   });
     function remove_pic(){
@@ -265,7 +255,7 @@
                 div12.style.color="";
                 div11.style.color="";
             }
-            console.log(selected_chat);
+
         }
 
     }
@@ -331,7 +321,7 @@
                     for (var key in response.messages) {
                         count += 1;
                     }
-                    console.log(count,initial_message_count)
+
                     if (count != initial_message_count) {
 
                         initial_message_count=count;
@@ -341,39 +331,37 @@
                             let message = response.messages[key][0];
                             let img_path= response.messages[key][1];
                             let chat_type=response.messages[key][2];
-                            console.log(
 
-                            )
+
 
                             let temp="";
                             if(chat_type=="user"){
                                 if(img_path!=null){
                                     let static_url="{% static '' %}" + img_path;
-                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background: #00a1ff;border-radius: 20px;border-radius: 20px;margin-top: 10px;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background: #034ca8;border-radius: 20px;border-radius: 20px;margin-top: 10px;color:white'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
-                                    {#let height=(document.getElementById("disease").scrollHeight);#}
-                                    {#console.log("eij",height,height+100);#}
-                                    {#document.getElementById("disease").scrollTo(0, height+100);#}
+
                                 }
 
                                 if(message!=""){
-                                    temp="<div style='width: 40%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 20px;background: #034ca8;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }
 
                             }else{
-                                console.log(message);
                                 if(message=="Invalid Image"){
-                                    temp="<div style='width: 40%;min-height: 10px;background: lightskyblue;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It look's like <b>=Invalid Image</b> sice the percetage of skin present in the image must be greater than 70%</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }else if(message=="Valid Image"){
-                                    temp="<div style='width: 40%;min-height: 10px;background: greenyellow;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It looks like a <b>valid image</b></p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }else{
-                                    temp="<div style='width: 40%;min-height: 10px;background: orangered;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }
                             }
+                            var objDiv = document.getElementById("disease");
+                            objDiv.scrollTop = objDiv.scrollHeight;
 
                         }
 
@@ -400,7 +388,7 @@
                     for (var key in response.messages) {
                         count_1 += 1;
                     }
-                    console.log(count_1,initial_message_count_1)
+
                     if (count_1 != initial_message_count_1) {
 
 
@@ -415,27 +403,88 @@
                             if(chat_type=="user"){
                                 if(img_path!=null){
                                     let static_url="{% static '' %}" + img_path;
-                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background: #00a1ff;border-radius: 20px;border-radius: 20px;margin-top: 10px;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background:#034ca8;border-radius: 12px;border-radius: 20px;margin-top: 10px;color:white;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
                                 if(message!=""){
-                                    temp="<div style='width: 40%;min-height: 20px;background: #00a1ff;padding: 20px 10px;margin-top: 10px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 20px;background: #034ca8;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
                             }else{
                                 if(message=="Invalid Image"){
-                                    temp="<div style='width: 40%;min-height: 10px;background: lightskyblue;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It look's like <b>=Invalid Image</b> sice the percetage of skin present in the image must be greater than 70%</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }else if(message=="Valid Image"){
-                                    temp="<div style='width: 40%;min-height: 10px;background: greenyellow;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It looks like a <b>valid image</b></p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
                                 else{
-                                    temp="<div style='width: 40%;min-height: 10px;background: orangered;padding: 20px 10px;margin-top: 8px;border-radius: 20px;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
 
                             }
+                            var objDiv = document.getElementById("cancer");
+                            objDiv.scrollTop = objDiv.scrollHeight+100;
+
+                        }
+
+                    }
+                },
+                error: function (response) {
+                    alert('An error occured')
+                }
+            });
+        }, 1000);
+    });
+</script>
+<script>
+    function request_doctor(){
+        let div=document.getElementById("chatbox");
+        div.innerHTML="";
+    }
+    initial_message_count_2 = 0;
+    $(document).ready(function () {
+        setInterval(function () {
+            $.ajax({
+                type: 'GET',
+                url: "getmessages2",
+                success: function (response) {
+                    count_2 = 0;
+                    for (var key in response.messages) {
+                        count_2 += 1;
+                    }
+
+                    if (count_2 != initial_message_count_2) {
+
+
+                        initial_message_count_2=count_2;
+                        $("#chatbox").empty();
+
+                        for (var key in response.messages) {
+                            let message = response.messages[key][0];
+                            let img_path= response.messages[key][1];
+                            let chat_type=response.messages[key][2];
+                            let temp="";
+                            if(chat_type=="user"){
+                                if(img_path!=null){
+                                    let static_url="{% static '' %}" + img_path;
+                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background:#034ca8;border-radius: 12px;border-radius: 20px;margin-top: 10px;color:white;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    document.getElementById("chatbox").innerHTML+=temp;
+                                }
+                                if(message!=""){
+                                    temp="<div style='width: 40%;min-height: 20px;background: #034ca8;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    document.getElementById("chatbox").innerHTML+=temp;
+                                }
+                            }else{
+                                if(message!=""){
+                                   temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~DOCTOR</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    document.getElementById("chatbox").innerHTML+=temp;
+                                }
+
+                            }
+                            var objDiv = document.getElementById("chatbox");
+                            objDiv.scrollTop = objDiv.scrollHeight+100;
 
                         }
 

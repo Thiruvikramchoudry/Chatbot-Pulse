@@ -1,0 +1,26 @@
+#search_button{
+    width: 131px;height: 24px;background-color: #034ca8;color: white;border-radius: 12px;margin: auto;padding: 16px 40px;
+    transition: 0.2s;
+}
+
+#search_button:hover{
+    background-color: #0f6be0;
+    cursor: pointer;
+}
+
+
+#close_con_div{
+    background: #034ca8;
+    border: none;
+    color: white;
+    border-radius: 12px;
+    height: 50px;
+    margin: auto;
+    transition: 0.2s;
+    margin-left: 45px;
+}
+
+#close_con_div:hover{
+    background-color: #20749a;
+    cursor: pointer;
+}
