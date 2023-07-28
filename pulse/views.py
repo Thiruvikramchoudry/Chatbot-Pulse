@@ -10,13 +10,13 @@ from pulse.disease_classifier import predict_disease
 from pulse.cancer_classifier import check_cancer
 from pulse.benign_malignant import spread_prediction
 from pulse.chat_response import get_response
+from pulse.message_encrypter import encrypt_message,decrypt_message
 
 
 
 
 
-Identified_desease=""
-Identified_cancer=""
+
 # Create your views here.
 
 
@@ -85,20 +85,23 @@ def send_message(request):
 
 
 
+
+
         if chatbox_type=="0":
-            new_message=chat_message_100(username=request.user,image=image,message_type=message_type,message=message,chat_type="user")
+            new_message=chat_message_100(username=request.user,image=image,message_type=message_type,message=encrypt_message(message),chat_type="user")
         elif chatbox_type=="1":
-            new_message=chat_message_101(username=request.user,image=image,message_type=message_type,message=message,chat_type="user")
+            new_message=chat_message_101(username=request.user,image=image,message_type=message_type,message=encrypt_message(message),chat_type="user")
         else:
-            new_message=chat_message_200(username=request.user,image=image,message_type=message_type,message=message,chat_type="user",doctor_name="doc")
+            new_message=chat_message_200(username=request.user,image=image,message_type=message_type,message=encrypt_message(message),chat_type="user",doctor_name="doc")
         new_message.save()
         if message!="":
             message_response = get_response(message, request.user)
+
             if chatbox_type=="0":
-                new_message=chat_message_100(username=request.user,message_type=message_type,message=message_response,chat_type="bot")
+                new_message=chat_message_100(username=request.user,message_type=message_type,message=encrypt_message(message_response),chat_type="bot")
                 new_message.save()
             elif chatbox_type=="1":
-                new_message=chat_message_101(username=request.user,message_type=message_type,message=message_response,chat_type="bot")
+                new_message=chat_message_101(username=request.user,message_type=message_type,message=encrypt_message(message_response),chat_type="bot")
                 new_message.save()
 
 
@@ -108,10 +111,10 @@ def send_message(request):
             if chatbox_type=="1":
                 skin_percentage=validate_image(image)
                 if skin_percentage<20:
-                    chat_message=chat_message_101(username=request.user,image=image,message_type=message_type,message="Invalid Image",chat_type="bot")
+                    chat_message=chat_message_101(username=request.user,image=image,message_type=message_type,message=encrypt_message("Invalid Image"),chat_type="bot")
                     chat_message.save()
                 else:
-                    chat_message = chat_message_101(username=request.user, image=image, message_type=message_type,message="Valid Image", chat_type="bot")
+                    chat_message = chat_message_101(username=request.user, image=image, message_type=message_type,message=encrypt_message("Valid Image"), chat_type="bot")
                     chat_message.save()
                     disease_type=predict_disease(image)
                     if len(client_request.objects.filter(username=request.user))!=0:
@@ -121,19 +124,20 @@ def send_message(request):
                     else:
                         client_side=client_request(username=request.user,disease=disease_type)
                         client_side.save()
-
-                    disease_message=chat_message_101(username=request.user,image=image,message_type=message_type,message="The disease looks like "+disease_type+" .This prediction is based on the image passed.",chat_type="bot")
+                    #Encryption
+                    disease_message=chat_message_101(username=request.user,image=image,message_type=message_type,message=encrypt_message("The disease looks like "+disease_type+" .This prediction is based on the image passed."),chat_type="bot")
                     disease_message.save()
             elif chatbox_type=="0":
 
                 skin_percentage=validate_image(image)
                 print(skin_percentage)
                 if skin_percentage<20:
-                    chat_message=chat_message_100(username=request.user,image=image,message_type=message_type,message="Invalid Image",chat_type="bot")
+                    #Encryption
+                    chat_message=chat_message_100(username=request.user,image=image,message_type=message_type,message=encrypt_message("Invalid Image"),chat_type="bot")
                     chat_message.save()
 
                 else:
-                    chat_message=chat_message_100(username=request.user,image=image,message_type=message_type,message="Valid Image",chat_type="bot")
+                    chat_message=chat_message_100(username=request.user,image=image,message_type=message_type,message=encrypt_message("Valid Image"),chat_type="bot")
                     cancer_type=check_cancer(image)
                     if len(client_request.objects.filter(username=request.user))!=0:
                         client_side=client_request.objects.get(username=request.user)
@@ -142,14 +146,16 @@ def send_message(request):
                     else:
                         client_side=client_request(username=request.user,disease=cancer_type)
                         client_side.save()
-                    cancer_response=chat_message_100(username=request.user,image=image,message_type=message_type,message="Based on the Image ,it looks like "+cancer_type,chat_type="bot")
+                    #Encryption
+                    cancer_response=chat_message_100(username=request.user,image=image,message_type=message_type,message=encrypt_message("Based on the Image ,it looks like "+cancer_type),chat_type="bot")
                     cancer_spread_type=spread_prediction(image)
                     cancer_spread_type_response="It look like a "+cancer_spread_type
                     if cancer_spread_type=="malignant":
                         cancer_spread_type_response+= " which means it can be spreadable and cause death if it's not taken any consern"
                     else:
                         cancer_spread_type_response+= " which means it seem's to be not spreadable and doesn't cause any death"
-                    cancer_spread=chat_message_100(username=request.user,image=image,message_type=message_type,message=cancer_spread_type_response,chat_type="bot")
+                    #Encryption
+                    cancer_spread=chat_message_100(username=request.user,image=image,message_type=message_type,message=encrypt_message(cancer_spread_type_response),chat_type="bot")
 
                     chat_message.save()
                     cancer_response.save()
@@ -175,7 +181,8 @@ def getmessages0(request):
             img=img[-2]+'/'+img[-1]
         else:
             img=None
-        text.append([message.message,img,message.chat_type])
+        #Decryption
+        text.append([decrypt_message(message.message),img,message.chat_type])
 
     return JsonResponse({"messages": text})
 
@@ -189,7 +196,8 @@ def getmessages1(request):
             img=img[-2]+'/'+img[-1]
         else:
             img=None
-        text.append([message.message,img,message.chat_type])
+        #Decryption
+        text.append([decrypt_message(message.message),img,message.chat_type])
 
     return JsonResponse({"messages": text})
 
@@ -214,7 +222,8 @@ def getmessages2(request):
             img = img[-2] + '/' + img[-1]
         else:
             img = None
-        text.append([message.message, img, message.chat_type])
+        #Decryption
+        text.append([decrypt_message(message.message), img, message.chat_type])
 
     return JsonResponse({"messages": text})
 
@@ -228,7 +237,8 @@ def getmessages20(request):
             img = img[-2] + '/' + img[-1]
         else:
             img = None
-        text.append([message.message, img, message.chat_type,message.username])
+        #Decryption
+        text.append([decrypt_message(message.message), img, message.chat_type,message.username])
 
     return JsonResponse({"messages": text})
 
@@ -247,6 +257,8 @@ def send_message_docend(request):
             message_type="message_image"
         else:
             message_type="message"
+        #Encryption
+        message=encrypt_message(message)
 
         new_message = chat_message_200(username="sample1", image=image, message_type=message_type, message=message,
                                        chat_type="doc", doctor_name=request.user)
