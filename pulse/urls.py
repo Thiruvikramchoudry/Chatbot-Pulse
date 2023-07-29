@@ -31,4 +31,6 @@ urlpatterns = [
     path('getmessages2',views.getmessages2,name="getmessages2"),
     path('getmessages20',views.getmessages20,name="getmessages20"),
     path('send_message_docend',views.send_message_docend,name="send_message_docend"),
+    path('close_session',views.close_session,name="close_session"),
 ]
+

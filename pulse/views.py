@@ -17,9 +17,6 @@ from pulse.message_encrypter import encrypt_message,decrypt_message
 
 
 
-# Create your views here.
-
-
 def index(request):
     if request.user.is_anonymous:
         return render(request,'pulse/index.html')
@@ -49,6 +46,16 @@ def signup(request):
         new_user.save()
         user = User.objects.create_user(username=username, password=password)
         user.save()
+        initial_message=chat_message_100(username=username,message_type="message",message=encrypt_message("Hello, welcome to Pulse, an advanced interactive chatbot at your service. How may I assist you today?"),chat_type="bot")
+        initial_message.save()
+        next_message=chat_message_100(username=username,message_type="message",message=encrypt_message("I can help you with skin cancer related queries...."),chat_type="bot")
+        next_message.save()
+        initial_message = chat_message_101(username=username, message_type="message",
+                                           message=encrypt_message("Hello, welcome to Pulse, an advanced interactive chatbot at your service. How may I assist you today?"),chat_type="bot")
+        initial_message.save()
+        next_message = chat_message_101(username=username, message_type="message",
+                                        message=encrypt_message("I can help you with skin Disease related queries...."),chat_type="bot")
+        next_message.save()
         user_access=authenticate(username=username,password=password)
         auth.login(request,user)
         return redirect('/')
@@ -103,7 +110,6 @@ def send_message(request):
             elif chatbox_type=="1":
                 new_message=chat_message_101(username=request.user,message_type=message_type,message=encrypt_message(message_response),chat_type="bot")
                 new_message.save()
-
 
 
 
@@ -267,5 +273,14 @@ def send_message_docend(request):
         return JsonResponse({'message': 'Data saved successfully'})  # Return a JSON response
 
 
-
+def close_session(request):
+    message=chat_message_100.objects.filter(username=request.user)
+    for i in message[2:]:
+        i.delete()
+    message = chat_message_101.objects.filter(username=request.user)
+    for i in message[2:]:
+        i.delete()
+    message = chat_message_200.objects.filter(username=request.user)
+    message.delete()
+    return JsonResponse({"message" : 'deleted sucessfully'})
 
