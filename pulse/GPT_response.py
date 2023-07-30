@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = ''
+openai.api_key = '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'
 
 def chatgpt_response(message,disease):
   if disease!="":

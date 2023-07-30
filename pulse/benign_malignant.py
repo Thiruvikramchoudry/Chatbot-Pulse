@@ -6,6 +6,7 @@ import numpy as np
 def spread_prediction(image):
     model = load_model("pulse/models/benign_malignent_model.h5")
 
+
     image_size = (150, 150)
 
     input_image_path = "pulse/static/user_images/"+str(image)

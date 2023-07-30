@@ -8,7 +8,7 @@ def resize_image(image_path, target_size=(28, 28)):
     img = Image.open(image_path).convert('RGB')
 
     # Resize the image to the target size (28x28 pixels)
-    img_resized = img.resize(target_size, Image.ANTIALIAS)
+    img_resized = img.resize(target_size, Image.BILINEAR)
 
     return img_resized
 
