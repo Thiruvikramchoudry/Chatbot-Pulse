@@ -91,9 +91,6 @@ def send_message(request):
 
 
 
-
-
-
         if chatbox_type=="0":
             new_message=chat_message_100(username=request.user,image=image,message_type=message_type,message=encrypt_message(message),chat_type="user")
         elif chatbox_type=="1":
