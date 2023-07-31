@@ -4,10 +4,13 @@ import torch.nn as nn
 from sklearn.feature_extraction.text import CountVectorizer
 import random
 from torch.nn.functional import softmax
-from pulse.description_response import get_description
+from .models import client_request
+from pulse.GPT_response import chatgpt_response
+import pandas as pd
+import numpy as np
 
 # Load intents
-with open('pulse/models/intents.json', 'r') as file:
+with open('pulse/models/description.json', 'r') as file:
     intents = json.load(file)
 
 # Create vectorizer
@@ -32,23 +35,35 @@ class ChatModel(nn.Module):
 model = ChatModel(X.shape[1], len(intents['intents']))
 
 # Load the saved model
-model.load_state_dict(torch.load('pulse/models/chatpulse.pth'))
+model.load_state_dict(torch.load('pulse/models/chatpulse_response.pth'))
 model.eval()
 
-
+def get_disease_name(username):
+    try:
+        disease=client_request.objects.get(username=username).disease
+    except:
+        disease=""
+    return disease
 
 
 # Test the model
-def get_response(message,username):
+def get_description(message,username):
     with torch.no_grad():
         prediction = model(torch.tensor(vectorizer.transform([message]).toarray()[0]).float())
         prediction = softmax(prediction, dim=0)  # Apply softmax to the outputs
         confidence, predicted_idx = torch.max(prediction, 0)
         print('Confidence:', confidence.item())  # print the confidence score
         if confidence < 0.7:  # confidence threshold
-
-            response=get_description(message,username)
+            disease_name=get_disease_name(username)
+            response=chatgpt_response(message,disease_name)
         else:
             tag = intents['intents'][predicted_idx.item()]['tag']
             response = random.choice([intent['responses'] for intent in intents['intents'] if intent['tag'] == tag][0])
+            print(response)
+            df=pd.read_excel('pulse/models/Skin_cancer_solution.xlsx')
+            df=df[["Name",response]]
+            disease_name=get_disease_name(username)
+            df = df[df['Name'] == disease_name]
+            print(df[response].values[0])
+            response=", ".join(map(str, df[response].values))
         return response
