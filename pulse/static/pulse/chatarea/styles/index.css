@@ -52,12 +52,12 @@ input:focus{
 }
 
 
-#submit_message{
+#submit_message,#mike_div{
     background-color: #034ca8;
     color: whitesmoke;
     transition: 0.2s;
 }
-#submit_message:hover{
+#submit_message:hover,#mike_div:hover{
     background-color: whitesmoke;
     color: #034ca8;
     cursor: pointer;
@@ -74,7 +74,7 @@ input:focus{
     width: 100%;
     height: 100%;
     z-index: -999;
-    background: #08678d;
+    background: #404B69;
     opacity: 0;
     animation: 1s loader linear;
 

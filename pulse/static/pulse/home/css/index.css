@@ -1,13 +1,13 @@
 #button_click{
-    border: 1px solid #00FFCA;
-    background:none;
+    background: #00818A;
     transition: 0.2s;
-    color: #00FFCA;
+    color: #DBEDF3;
+    border-radius: 15px;
 }
 
 #button_click:hover{
-    background:#00FFCA;
-    color: #0A4D68;
+    background: #DBEDF3;
+    color: #00818A;
 }
 
 
@@ -112,7 +112,7 @@ a:hover{
     width: 100%;
     height: 100%;
     z-index: -999;
-    background: #08678d;
+    background: #404B69;
     opacity: 0;
     animation: 1.5s loader linear;
 
@@ -131,4 +131,17 @@ a:hover{
         opacity: 0;
         z-index: 0;
     }
+}
+
+#change_id{
+
+    color: #DBEDF3;
+    transition: 0.2s;
+    background: #00818A;
+}
+#change_id:hover{
+    background: #DBEDF3;
+    color: #00818A;
+    border:none;
+    cursor: pointer;
 }

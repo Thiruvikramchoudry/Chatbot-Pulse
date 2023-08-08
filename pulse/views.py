@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 
 from django.contrib.auth.models import auth,User
 from django.contrib.auth import authenticate
-from .models import  user_details,chat_message_100,chat_message_101,chat_message_200,doctor_detail,client_request
+from .models import  user_details,chat_message_100,chat_message_101,chat_message_200,doctor_detail,client_request,doner_details
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from pulse.image_validation import validate_image
@@ -11,6 +11,10 @@ from pulse.cancer_classifier import check_cancer
 from pulse.benign_malignant import spread_prediction
 from pulse.chat_response import get_response
 from pulse.message_encrypter import encrypt_message,decrypt_message
+import speech_recognition as sr
+from django.views.decorators.csrf import csrf_exempt
+from pydub import AudioSegment
+
 
 
 
@@ -209,7 +213,8 @@ def doctor_login(request):
     if len(doctor_detail.objects.filter(username=request.user))==1:
         return render(request,'pulse/doctor_ui.html',{'username':request.user})
     else:
-        return render(request,'pulse/chatarea.html')
+        details=doctor_detail.objects.all()
+        return render(request,'pulse/doctor_detail.html',{'doctor_details':details})
 
 
 
@@ -281,3 +286,36 @@ def close_session(request):
     message.delete()
     return JsonResponse({"message" : 'deleted sucessfully'})
 
+
+@csrf_exempt
+def speech_convert(request):
+    if request.method == 'POST':
+        audio_file = request.FILES['audio_file']  # get the audio file
+        print(audio_file)
+        audio = AudioSegment.from_ogg(audio_file)
+        wav_file_path = audio_file.replace('.ogg', '.wav')
+        audio.export(wav_file_path, format='wav')
+        r = sr.Recognizer()
+        with sr.AudioFile(wav_file_path) as source:
+            audio_data = r.record(source)
+            text = r.recognize_google(audio_data)
+            # send the text back as JSON
+            return JsonResponse({'text': text})
+    return JsonResponse({'error': 'Only POST method allowed'}, status=405)
+
+
+def blood_camp(request):
+    doner_detail=doner_details.objects.all()
+    return render(request,'pulse/blood_camp.html',{'status_details':doner_detail})
+
+def add_doner(request):
+    if request.method=="POST":
+        name=request.POST['doner_name']
+        phone_number=request.POST["phone_number"]
+        blood_group=request.POST["blood_group"]
+        recent_disease=request.POST["recent_disease"]
+        gender=request.POST["gender"]
+        print(name,phone_number,gender,blood_group,recent_disease)
+        new_doner=doner_details(doner_name=name,mobile_number=phone_number,blood_group=blood_group,doner_gender=gender,disease_status=recent_disease)
+        new_doner.save()
+        return redirect('blood_camp')

@@ -6,31 +6,48 @@
     <title>Pulse</title>
     <link rel="stylesheet" href="{% static 'pulse/home/css/index.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'pulse/chatarea/images/Pulse_logo.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
 
 </head>
-<body style="background-color: #088395">
+<body style="background-color: #404B69;">
     <div id="preloader-1">
         <div style="position: fixed;left: 47%;top: 45%;width: 80px;height: 80px;">
                     <img src="{% static 'pulse/chatarea/images/394.gif' %}" alt="img" style="width: 100%;height: 100%;border-radius: 55px;">
         </div>
     </div>
 
-    <nav style="width: 101%;height: 70px;display: flex;color: #00FFCA;position: relative;top: -8px;background: #0A4D68;left: -8px;">
+    <nav style="width: 101%;height: 70px;display: flex;color: #DBEDF3;position: relative;top: -8px;background: #283149;left: -8px;">
         <div style="width: 20%;height: 100%;padding: 5px;margin-left: 10px;">
             <svg xmlns="http://www.w3.org/2000/svg" style="position:relative;top: 8px;" width="40" height="40" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
 </svg><span style="font-size: 32px;margin-left: 5px;">Pulse</span>
         </div>
         <div style="width: 50%;height: 100%;padding: 5px;display: flex;">
-            <div style="padding: 16px;"><a  style="color:#00FFCA;font-size: 20px; " id="referal">Research</a></div>
-            <div style="padding: 16px;"><a style="color:#00FFCA;font-size: 20px;" id="referal">Developers</a></div>
-            <div style="padding: 16px;"><a style="color:#00FFCA;font-size: 20px;" id="referal" href="{% url 'doctor_login' %}">Doctors</a></div>
-            <div style="padding: 16px;"><a style="color:#00FFCA;font-size: 20px;" id="referal">Policy</a></div>
-            <div style="padding: 16px;"><a style="color:#00FFCA;font-size: 20px;" id="referal">Documentation</a></div>
+
+            <div style="padding: 16px;"><a style="color:#DBEDF3;font-size: 20px;" id="referal" href="https://github.com/Thiruvikramchoudry">Developers</a></div>
+            <div style="padding: 16px;"><a style="color:#DBEDF3;font-size: 20px;" id="referal" href="{% url 'doctor_login' %}">Doctors</a></div>
+            <div style="padding: 16px;"><a style="color:#DBEDF3;font-size: 20px;" id="referal" href="{% url 'blood_camp' %}">Donate <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-droplet-fill" viewBox="0 0 16 16" style="color: red">
+  <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z"/>
+</svg></a></div>
+            <div style="padding: 16px;"><a style="color:#DBEDF3;font-size: 20px;" id="referal" href="{% static 'pulse/home/images/Black Squad_24_Diagnosing skin conditions using images.pptx' %}">Documentation</a></div>
+                    <div style="padding: 16px;"><a  style="color:#DBEDF3;font-size: 20px; " id="referal">About Us</a></div>
+
         </div>
+                <div id="google_translate_element" style="margin-top: 19px;"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
         <div style="width: 30%;height: 100%;display: flex;padding: 15px;justify-content: end;">
             <h3 style="margin-right: 54px;position: relative;bottom: 9px;text-transform: uppercase;">{{ username }}</h3>
-            <a style="text-decoration: none;color: #00FFCA;" href="{% url 'logout' %}"><div style="width: 100px;height: 40px" id="button_click">
+            <a style="text-decoration: none;color: #DBEDF3;" href="{% url 'logout' %}"><div style="width: 100px;height: 40px" id="button_click">
                 <span style="position: relative;left:26px;top:10px">Logout</span>
             </div></a>
 
@@ -38,13 +55,13 @@
     </nav>
     <div style="display: flex;height: 500px;width: 100%;margin-top: 100px;padding: 20px 0px;justify-content: space-between">
         <div style="width: 50%;height: 100%;margin-left: 40px;">
-            <h1 style="font-size: 80px;color:#00FFCA;margin-top: 20px;margin-bottom:0px  ">Introducing Pulse</h1>
-            <p style="font-size: 30px;color:#00FFCA ">Pulse, our groundbreaking model designed to address your medical inquiries with a particular focus on identifying skin diseases, allergies, and even skin cancers. Notably, Pulse not only provides accurate diagnoses but also offers tailored medical solutions to effectively address your concerns.</p>
+            <h1 style="font-size: 80px;color:#DBEDF3;margin-top: 20px;margin-bottom:0px  ">Introducing Pulse</h1>
+            <p style="font-size: 30px;color:#DBEDF3 ">Pulse, our groundbreaking model designed to address your medical inquiries with a particular focus on identifying skin diseases, allergies, and even skin cancers. Notably, Pulse not only provides accurate diagnoses but also offers tailored medical solutions to effectively address your concerns.</p>
             <div style="display: flex">
                 <a href="{% url 'chatbox' %}" style="text-decoration: none" ><div style="width: 75px;height: 25px;padding: 13px;font-size: 18px;" id="button_click">
                 Try Pulse
             </div></a>
-            <div style="margin-left: 20px;margin-top: 13px;"><a href="" style="color: #00FFCA;font-size: 20px;">Get more info</a></div>
+            <div style="margin-left: 20px;margin-top: 13px;"><a href="" style="color: #DBEDF3;font-size: 20px;">Get more info</a></div>
             </div>
 
         </div>
@@ -52,7 +69,6 @@
             <img src="{% static 'pulse/home/images/home.png' %}" alt="jb" style="width: 90%;height: 90%;margin-left: 50px;">
         </div>
     </div>
-
 
 </body>
 

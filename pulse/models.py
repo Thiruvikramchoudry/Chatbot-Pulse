@@ -51,3 +51,13 @@ class client_request(models.Model):
     disease=models.CharField(max_length=50)
     def __str__(self):
         return self.username
+
+
+class doner_details(models.Model):
+    doner_name=models.CharField(max_length=50)
+    mobile_number=models.IntegerField()
+    doner_gender=models.CharField(max_length=50)
+    blood_group=models.CharField(max_length=50)
+    disease_status=models.CharField(max_length=10)
+    def __str__(self):
+        return self.doner_name
