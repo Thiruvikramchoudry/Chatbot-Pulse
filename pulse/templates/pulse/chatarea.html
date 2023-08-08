@@ -8,13 +8,14 @@
     <link rel="icon" type="image/x-icon" href="{% static 'pulse/chatarea/images/Pulse_logo.png' %}">
 </head>
 
-<body style="position: relative;right: 8px;bottom: 8px;height: 100vh;overflow: hidden;width: 101%;z-index: 1;background: #08678d;margin: auto">
+<body style="position: relative;right: 8px;bottom: 8px;height: 100vh;overflow: hidden;width: 101%;z-index: 1;background: #1f212c;margin: auto">
 
     <div id="preloader-1">
         <div style="position: fixed;left: 47%;top: 45%;width: 80px;height: 80px;">
                     <img src="{% static 'pulse/chatarea/images/394.gif' %}" alt="img" style="width: 100%;height: 100%;border-radius: 55px;">
         </div>
     </div>
+
     <div style="width: 100%;height: 100%;display: flex;">
         <div  id="side_bar">
 
@@ -29,7 +30,7 @@
             <div id="side_bar_inner">
                 <img src="{% static 'pulse/home/images/Pulse_logo.png' %}" alt="img" style=" width: 100px;margin-left: 29%;border-radius: 51px;margin-bottom: 11px;margin-top: 11px;">
             <div style="width: 92%;min-height: 200px;padding: 10px;position: relative;bottom: 10px;">
-                <div style="height: 34px;width: 92%;border-radius: 5px;margin-bottom: 10px;padding: 10px;background-color: #09384d;color: #20749a;"   onclick="choose_bot(0)" id="side_nav_selector1">
+                <div style="height: 34px;width: 92%;border-radius: 5px;margin-bottom: 10px;padding: 10px;background-color: #dbedf3;color: #00818a;"   onclick="choose_bot(0)" id="side_nav_selector1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16" >
   <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z"/>
   <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"/>
@@ -92,7 +93,7 @@ function googleTranslateElementInit() {
 
                 <!--second chatbox-->
                 <div style="height: 85%;width: 100%;overflow-y: scroll;display: none;overflow-x:hidden;padding-bottom: 10px;" id="cancer">
-                        <div style="width: 50%;min-height: 20px;background: #ff6300;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;box-shadow: 2px 2px 95px 1px black;margin-left: 10px;font-family: monospace;font-size: 13px;">
+                        <div style="width: 50%;min-height: 20px;background: #ff6300;padding: 20px 10px;margin-top: 10px;border-radius: 20px;display: flex;color: #000000;margin-left: 10px;font-family: monospace;font-size: 13px;">
                             <div style="width: 70px"><b>PULSE : </b></div>
                             <div><span>Hi This is PULSE an interactive chatbot....You can ask me queries based on any skin cancer.....</span></div>
 
@@ -111,7 +112,7 @@ function googleTranslateElementInit() {
                 </div>
                 <form action="{% url 'send_message' %}" method="post" id="form_submition">
                     {% csrf_token %}
-                <div style="height: 5%;width: 94%;padding: 32px;display: flex;box-shadow: 2px 2px 98px 10px black;border-radius: 72px;">
+                <div style="height: 5%;width: 94%;padding: 32px;display: flex;border-radius: 72px;">
 
                     <div style="width: 15%;height: 40px;display: flex;justify-content: space-around" >
 
@@ -222,10 +223,10 @@ function googleTranslateElementInit() {
                 div1.style.display="block";
                 div2.style.display="none";
                 div3.style.display="none";
-                div11.style.backgroundColor="#09384d";
+                div11.style.backgroundColor="#dbedf3";
                 div12.style.backgroundColor="";
                 div13.style.backgroundColor="";
-                div11.style.color="#20749a";
+                div11.style.color="#00818a";
                 div12.style.color="";
                 div13.style.color="";
 
@@ -234,10 +235,10 @@ function googleTranslateElementInit() {
                 div2.style.display="block";
                 div1.style.display="none";
                 div3.style.display="none";
-                div12.style.backgroundColor="#09384d";
+                div12.style.backgroundColor="#dbedf3";
                 div11.style.backgroundColor="";
                 div13.style.backgroundColor="";
-                div12.style.color="#20749a";
+                div12.style.color="#00818a";
                 div11.style.color="";
                 div13.style.color="";
             } else {
@@ -245,10 +246,10 @@ function googleTranslateElementInit() {
                 div3.style.display="block";
                 div2.style.display="none";
                 div1.style.display="none";
-                div13.style.backgroundColor="#09384d";
+                div13.style.backgroundColor="#dbedf3";
                 div12.style.backgroundColor="";
                 div11.style.backgroundColor="";
-                div13.style.color="#20749a";
+                div13.style.color="#00818a";
                 div12.style.color="";
                 div11.style.color="";
             }
@@ -335,25 +336,25 @@ function googleTranslateElementInit() {
                             if(chat_type=="user"){
                                 if(img_path!=null){
                                     let static_url="{% static '' %}" + img_path;
-                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background: #034ca8;border-radius: 20px;border-radius: 20px;margin-top: 10px;color:white'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background: #DBEDF3;border-radius: 20px;border-radius: 20px;margin-top: 10px;color:#00818a'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
 
                                 }
 
                                 if(message!=""){
-                                    temp="<div style='width: 40%;min-height: 20px;background: #034ca8;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 20px;background: #DBEDF3;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: #00818a;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }
 
                             }else{
                                 if(message=="Invalid Image"){
-                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It look's like <b>Invalid Image</b> sice the percentage of skin present in the image must be greater than 70%</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #00818a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It look's like <b>Invalid Image</b> sice the percentage of skin present in the image must be greater than 70%</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }else if(message=="Valid Image"){
-                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It looks like a <b>valid image</b></p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #00818a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It looks like a <b>valid image</b></p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }else{
-                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background:#00818a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("disease").innerHTML+=temp;
                                 }
                             }
@@ -400,23 +401,23 @@ function googleTranslateElementInit() {
                             if(chat_type=="user"){
                                 if(img_path!=null){
                                     let static_url="{% static '' %}" + img_path;
-                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background:#034ca8;border-radius: 12px;border-radius: 20px;margin-top: 10px;color:white;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background:#DBEDF3;border-radius: 12px;border-radius: 20px;margin-top: 10px;color:#00818a;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
                                 if(message!=""){
-                                    temp="<div style='width: 40%;min-height: 20px;background: #034ca8;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 20px;background: #DBEDF3;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: #00818a;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
                             }else{
                                 if(message=="Invalid Image"){
-                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It look's like <b>Invalid Image</b> sice the percentage of skin present in the image is less than 70%</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #00818a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It look's like <b>Invalid Image</b> sice the percentage of skin present in the image is less than 70%</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }else if(message=="Valid Image"){
-                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It looks like a <b>valid image</b></p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #00818a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>It looks like a <b>valid image</b></p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
                                 else{
-                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #00818a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~PULSE</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("cancer").innerHTML+=temp;
                                 }
 
@@ -466,16 +467,16 @@ function googleTranslateElementInit() {
                             if(chat_type=="user"){
                                 if(img_path!=null){
                                     let static_url="{% static '' %}" + img_path;
-                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background:#034ca8;border-radius: 12px;border-radius: 20px;margin-top: 10px;color:white;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    temp="<div style='width: 98%;min-height: 100px;border-radius: 20px;font-size: 13px;display: flex;justify-content: end''> <div style='width: 350px;background:#DBEDF3;border-radius: 12px;border-radius: 20px;margin-top: 10px;color:#00818a;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~{{ username }}</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
                                     document.getElementById("chatbox").innerHTML+=temp;
                                 }
                                 if(message!=""){
-                                    temp="<div style='width: 40%;min-height: 20px;background: #034ca8;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 20px;background: #DBEDF3;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: #00818a;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 87%;top: -17px;margin: 0px'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("chatbox").innerHTML+=temp;
                                 }
                             }else{
                                 if(message!=""){
-                                   temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~DOCTOR</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                   temp="<div style='width: 40%;min-height: 10px;background: #00818a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;left: 90%;top: -17px;margin: 0px'><b>~DOCTOR</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("chatbox").innerHTML+=temp;
                                 }
 

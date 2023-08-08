@@ -46,7 +46,7 @@
     border-radius: 5px;
     animation: 4s float linear;
     opacity: 1;
-    background: #0a4d68;
+    background: #283149;
 
 }
 
@@ -74,7 +74,7 @@
 
 
 ::placeholder {
-  color: #00FFCA;
+  color: #DBEDF3;
   opacity: 1; /* Firefox */
 }
 
@@ -85,9 +85,9 @@ textarea:focus, input:focus{
 #signin{
     width: 100px;
     height: 40px;
-    background-color: #088395;
+    background-color: #283149;
     margin-top: 10px;
-    color: #00FFCA;
+    color: #DBEDF3;
     border: 1px solid #084259;
     border-radius: 5px;
     margin-left: 130px;
@@ -95,8 +95,8 @@ textarea:focus, input:focus{
 }
 
 #signin:hover{
-    background-color: #00FFCA;
-    color: #088395;
+    background-color: #00818A;
+    color: #DBEDF3 ;
     cursor: pointer;
 }
 
