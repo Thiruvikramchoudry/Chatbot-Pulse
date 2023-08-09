@@ -11,9 +11,8 @@ from pulse.cancer_classifier import check_cancer
 from pulse.benign_malignant import spread_prediction
 from pulse.chat_response import get_response
 from pulse.message_encrypter import encrypt_message,decrypt_message
-import speech_recognition as sr
-from django.views.decorators.csrf import csrf_exempt
-from pydub import AudioSegment
+
+
 
 
 
@@ -287,21 +286,21 @@ def close_session(request):
     return JsonResponse({"message" : 'deleted sucessfully'})
 
 
-@csrf_exempt
-def speech_convert(request):
-    if request.method == 'POST':
-        audio_file = request.FILES['audio_file']  # get the audio file
-        print(audio_file)
-        audio = AudioSegment.from_ogg(audio_file)
-        wav_file_path = audio_file.replace('.ogg', '.wav')
-        audio.export(wav_file_path, format='wav')
-        r = sr.Recognizer()
-        with sr.AudioFile(wav_file_path) as source:
-            audio_data = r.record(source)
-            text = r.recognize_google(audio_data)
-            # send the text back as JSON
-            return JsonResponse({'text': text})
-    return JsonResponse({'error': 'Only POST method allowed'}, status=405)
+# @csrf_exempt
+# def speech_convert(request):
+#     if request.method == 'POST':
+#         audio_file = request.FILES['audio_file']  # get the audio file
+#         print(audio_file)
+#         audio = AudioSegment.from_ogg(audio_file)
+#         wav_file_path = audio_file.replace('.ogg', '.wav')
+#         audio.export(wav_file_path, format='wav')
+#         r = sr.Recognizer()
+#         with sr.AudioFile(wav_file_path) as source:
+#             audio_data = r.record(source)
+#             text = r.recognize_google(audio_data)
+#             # send the text back as JSON
+#             return JsonResponse({'text': text})
+#     return JsonResponse({'error': 'Only POST method allowed'}, status=405)
 
 
 def blood_camp(request):

@@ -32,7 +32,7 @@ urlpatterns = [
     path('getmessages20',views.getmessages20,name="getmessages20"),
     path('send_message_docend',views.send_message_docend,name="send_message_docend"),
     path('close_session',views.close_session,name="close_session"),
-    path('speech_convert',views.speech_convert,name="speech_convert"),
+    # path('speech_convert',views.speech_convert,name="speech_convert"),
     path('blood_camp',views.blood_camp,name="blood_camp"),
     path('add_doner',views.add_doner,name="add_doner"),
 ]
