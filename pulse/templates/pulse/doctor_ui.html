@@ -215,17 +215,17 @@
                             if(chat_type=="user"){
                                 if(img_path!=null){
                                     let static_url="{% static '' %}" + img_path;
-                                    temp="<div style='width: 98%;min-height: 100px;margin-left:12px;border-radius: 20px;font-size: 13px;display: flex'> <div style='width: 350px;background: #20749a;border-radius: 12px;border-radius: 20px;margin-top: 10px;color:white;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~CLIENT</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
+                                    temp="<div style='width: 98%;min-height: 100px;margin-left:12px;border-radius: 20px;font-size: 13px;display: flex'> <div style='width: 350px;background: #DBEDF3;border-radius: 12px;border-radius: 20px;margin-top: 10px;color:#00818a;'> <div style='text-align: end;height: 20px;padding: 4px 16px;'> <b>~CLIENT</b></div><div style='width: 100%;'><img src='"+static_url+"' alt='img' style='width: 100%;border-radius: 3px 3px 18px 18px;'></div></div></div>"
                                     document.getElementById("chatbox").innerHTML+=temp;
                                 }
                                 if(message!=""){
 
-                                    temp="<div style='width: 40%;min-height: 10px;background: #20749a;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;top: -17px;text-align: end;margin:0px;'><b>~CLIENT</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                    temp="<div style='width: 40%;min-height: 10px;background: #DBEDF3;padding: 20px 10px;margin-top: 8px;border-radius: 12px;color: #00818a;box-shadow: 2px 2px 95px 1px black;margin-left: 1%;font-family: monospace;font-size: 13px;'> <p style='position: relative;top: -17px;text-align: end;margin:0px;'><b>~CLIENT</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("chatbox").innerHTML+=temp;
                                 }
                             }else{
                                 if(message!=""){
-                                   temp="<div style='width: 40%;min-height: 20px;background: #034ca8;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;top: -17px;text-align: end;margin:0px;'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
+                                   temp="<div style='width: 40%;min-height: 20px;background: #00818a;padding: 20px 10px;margin-top: 10px;border-radius: 12px;color: white;box-shadow: 2px 2px 95px 1px black;margin-left: 56%;font-family: monospace;font-size: 13px;'> <p style='position: relative;top: -17px;text-align: end;margin:0px;'><b>~{{ username }}</b></p> <div style='width: 100%;position: relative;top: -10px;'><p style='margin:0px'>"+message+"</p></div></div>"
                                     document.getElementById("chatbox").innerHTML+=temp;
                                 }
 
