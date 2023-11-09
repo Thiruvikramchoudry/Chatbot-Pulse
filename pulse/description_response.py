@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 import random
 from torch.nn.functional import softmax
 from .models import client_request
-from pulse.GPT_response import chatgpt_response
+from pulse.response import chatgpt_response
 import pandas as pd
 import numpy as np
 
